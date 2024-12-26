@@ -1,0 +1,231 @@
+ /* Reset default */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Arial, sans-serif;
+ }
+
+ body {
+     display: flex;
+     flex-direction: row;
+     min-height: 100vh;
+     background-color: #f8f8f8;
+ }
+
+ /* Container Utama */
+ .container {
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+ }
+
+ /* Profile Section */
+ .profile {
+     background-color: #060522;
+     color: #ffffff;
+     width: 35%;
+     text-align: center;
+     padding: 40px 20px;
+     position: relative;
+ }
+
+ .profile-img {
+     width: 70%;
+     border-radius: 10px;
+     margin-bottom: 20px;
+ }
+
+ .social-icons {
+     position: sticky;
+     top: 0;
+     background-color: #0b0d2e;
+     padding: 10px 0;
+ }
+
+ .social-icons a img {
+     width: 30px;
+     margin: 5px;
+     /* filter: invert(1); */
+     transition: transform 0.2s ease-in-out;
+ }
+
+ .social-icons a img:hover {
+     transform: scale(1.4);
+     /* Efek zoom saat hover */
+ }
+
+ .profile h1 {
+     margin-bottom: 20px;
+ }
+
+ /* Portfolio container yang membungkus .portfolio */
+ .portfolio-container1 {
+     width: 65%;
+     /* Mengatur lebar sesuai dengan kebutuhan */
+     height: 500px;
+     /* Tentukan tinggi container yang diinginkan */
+     overflow-y: auto;
+     /* Menjadikan konten scrollable */
+     padding: 20px;
+     background-color: #ffffff;
+ }
+
+ /* Portfolio Section */
+ .portfolio {
+     background-color: #ffffff;
+     width: 65%;
+     padding: 40px;
+ }
+
+ .portfolio h2 {
+     margin-bottom: 20px;
+     font-size: 28px;
+ }
+
+ .portfolio-item {
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+     padding: 10px;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+ }
+
+ .image-placeholder {
+     width: 100px;
+     height: 100px;
+     background-color: #e0e0e0;
+     border-radius: 8px;
+     margin-right: 20px;
+ }
+
+ .portfolio-content h3 {
+     font-size: 18px;
+     margin-bottom: 10px;
+ }
+
+ .portfolio-content p {
+     font-size: 14px;
+     margin-bottom: 10px;
+     color: #555;
+ }
+
+ .portfolio-content button {
+     padding: 6px 12px;
+     background-color: #444;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+ .portfolio-content button:hover {
+     background-color: #222;
+ }
+
+ /* Pagination */
+ .pagination {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
+ }
+
+ .pagination button {
+     padding: 8px 16px;
+     margin: 0 5px;
+     background-color: #444;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+ .pagination button:hover {
+     background-color: #222;
+ }
+
+ .pagination span {
+     font-size: 16px;
+     font-weight: bold;
+     margin: 0 10px;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     body {
+         flex-direction: column;
+     }
+
+     .container {
+         flex-direction: column;
+     }
+
+     .profile {
+         width: 100%;
+         padding: 20px;
+     }
+
+     .social-icons {
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+     }
+
+     .portfolio {
+         width: 100%;
+         padding: 20px;
+     }
+
+     .portfolio-item {
+         flex-direction: column;
+         text-align: center;
+     }
+
+     .image-placeholder {
+         margin-bottom: 10px;
+         margin-right: 0;
+     }
+
+
+ }
+
+
+
+ /* Styling button scroll to top */
+ .scroll-to-top {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     width: 50px;
+     height: 50px;
+     background-color: #0b0d2e;
+     /* Warna background */
+     color: white;
+     border: none;
+     border-radius: 50%;
+     /* Membuat button berbentuk bulat */
+     font-size: 24px;
+     text-align: center;
+     cursor: pointer;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+     display: none;
+     /* Button tidak muncul secara default */
+     z-index: 1000;
+     transition: all 0.3s ease;
+ }
+
+ /* Efek hover pada button */
+ .scroll-to-top:hover {
+     background-color: #333;
+     /* Warna background saat di-hover */
+ }
+
+ /* Hanya tampil di mode smartphone (max-width: 768px) */
+ @media (max-width: 768px) {
+     .scroll-to-top {
+         display: block;
+         /* Tampilkan button saat layar kecil */
+     }
+ }
