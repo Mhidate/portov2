@@ -59,17 +59,6 @@
      margin-bottom: 20px;
  }
 
- /* Portfolio container yang membungkus .portfolio */
- .portfolio-container1 {
-     width: 65%;
-     /* Mengatur lebar sesuai dengan kebutuhan */
-     height: 500px;
-     /* Tentukan tinggi container yang diinginkan */
-     overflow-y: auto;
-     /* Menjadikan konten scrollable */
-     padding: 20px;
-     background-color: #ffffff;
- }
 
  /* Portfolio Section */
  .portfolio {
@@ -113,7 +102,7 @@
 
  .portfolio-content button {
      padding: 6px 12px;
-     background-color: #444;
+     background-color: #060522;
      color: white;
      border: none;
      border-radius: 4px;
@@ -122,7 +111,9 @@
 
  .portfolio-content button:hover {
      background-color: #222;
+     color: #d56906;
  }
+
 
  /* Pagination */
  .pagination {
@@ -135,7 +126,7 @@
  .pagination button {
      padding: 8px 16px;
      margin: 0 5px;
-     background-color: #444;
+     background-color: #060522;
      color: white;
      border: none;
      border-radius: 4px;
@@ -144,6 +135,7 @@
 
  .pagination button:hover {
      background-color: #222;
+     color: #d56906;
  }
 
  .pagination span {

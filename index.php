@@ -37,10 +37,15 @@
                 <!-- Card portfolio akan di-generate di sini -->
             </div>
 
+             <!-- Informasi Halaman -->
+            <div id="pageInfo" >
+                Page 1 of 1
+            </div>
+
             <!-- Pagination -->
             <div class="pagination">
                 <button id="prevBtn">Prev</button>
-                <span>Jumlah page</span>
+                <span id="pageNumber">1</span>
                 <button id="nextBtn">Next</button>
             </div>
         </div>
@@ -48,6 +53,7 @@
 
     <!-- <script src="public/script/index.js"></script> -->
     <script src="public/script/data_index.js"></script>
+    <script src="public/script/index_button_up.js"></script>
  
 </body>
 </html>
