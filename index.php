@@ -10,9 +10,9 @@
 
 <body>
     <!-- Button Scroll to Top -->
-    <button id="scrollToTopBtn" class="scroll-to-top" onclick="scrollToTop()">
+    <!-- <button id="scrollToTopBtn" class="scroll-to-top" onclick="scrollToTop()">
         ↑
-    </button>
+    </button> -->
     <div class="main-container">
         <!-- Profile Container -->
         <div class="profile-container">
