@@ -4,41 +4,37 @@ let currentPage = 1;
 let totalPages = 0;
 let portfolioItems = [];
 
-// Fungsi untuk mengambil data dari server
+// Fetch data from the server
 function fetchPortfolioData() {
-    fetch('app/data/get_data.php')  // Pastikan path file PHP sesuai dengan lokasi Anda
+    fetch('app/data/get_data.php') // Pastikan path ke file PHP sesuai
         .then(response => response.json())
         .then(data => {
-            console.log("Data yang diterima:", data);  // Melihat data yang diterima di console
-            portfolioItems = data;  // Menyimpan data ke dalam portfolioItems
-            totalPages = Math.ceil(portfolioItems.length / itemsPerPage);  // Hitung total halaman
-            currentPage = 1; // Reset ke halaman pertama
-            renderPortfolio();      // Render data setelah diambil
-            renderPagination();     // Render pagination setelah data diambil
+            console.log("Data yang diterima dari server:", data); // Debug data dari server
+            portfolioItems = data; // Simpan data ke dalam array
+            totalPages = Math.ceil(portfolioItems.length / itemsPerPage); // Hitung total halaman
+            renderPortfolio(); // Render portofolio
+            updatePaginationInfo(); // Perbarui informasi pagination
         })
-        .catch(error => {
-            console.error("Error fetching portfolio data:", error);
-        });
+        .catch(error => console.error("Error fetching portfolio data:", error));
 }
 
 // Render portfolio items
 function renderPortfolio() {
     const container = document.getElementById("portfolio-container");
-    container.innerHTML = ""; // Clear container
+    container.innerHTML = ""; // Bersihkan kontainer
 
-    // Calculate start and end index
+    // Hitung indeks awal dan akhir
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    // Generate portfolio items for current page
+    // Ambil item untuk halaman saat ini
     const currentItems = portfolioItems.slice(startIndex, endIndex);
     currentItems.forEach(item => {
         const card = `
             <div class="portfolio-item">
-               
                 <div class="portfolio-content">
-                    <h3>${item.title}</h3>  <!-- Menggunakan title -->
-                    <p>${item.desk}</p>     <!-- Menggunakan desk -->
+                    <h3>${item.title}</h3>  
+                    <p>${item.desk}</p>     
                     <a href="${item.link}" target="_blank">
                         <button>View</button>
                     </a>
@@ -47,36 +43,16 @@ function renderPortfolio() {
         `;
         container.innerHTML += card;
     });
+}
 
-    // Update page number and page info
+// Update pagination information
+function updatePaginationInfo() {
     document.getElementById("pageNumber").innerText = currentPage;
-    document.getElementById("pageInfo").innerText = `Page ${currentPage} of ${totalPages}`;
-}
+    document.getElementById("totalPages").innerText = totalPages;
 
-// Render pagination buttons and info
-function renderPagination() {
-    const pageInfo = document.getElementById("pageInfo");
-    pageInfo.innerHTML = `Page ${currentPage} of ${totalPages}`;  // Menampilkan informasi halaman
-
-    // Disable prevBtn if on the first page
+    // Disable/Enable buttons based on current page
     document.getElementById("prevBtn").disabled = currentPage === 1;
-
-    // Disable nextBtn if on the last page
     document.getElementById("nextBtn").disabled = currentPage === totalPages;
-
-
-}
-// Fungsi untuk scroll ke atas saat tombol Next/Prev ditekan
-function scrollToTopIfMobile() {
-    // Periksa jika lebar layar <= 768px
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        window.scrollTo({
-            top: 400,
-            behavior: "smooth"
-        });
-
-
-    }
 }
 
 // Event listeners for buttons
@@ -84,24 +60,17 @@ document.getElementById("prevBtn").addEventListener("click", () => {
     if (currentPage > 1) {
         currentPage--;
         renderPortfolio();
-        renderPagination();
-        scrollToTopIfMobile();
-
+        updatePaginationInfo();
     }
-
 });
 
 document.getElementById("nextBtn").addEventListener("click", () => {
     if (currentPage < totalPages) {
         currentPage++;
         renderPortfolio();
-        renderPagination();
-        scrollToTopIfMobile();
-
+        updatePaginationInfo();
     }
 });
-
-
 
 // Initial fetch and render
 fetchPortfolioData();

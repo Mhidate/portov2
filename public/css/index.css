@@ -1,223 +1,196 @@
- /* Reset default */
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: Arial, sans-serif;
- }
-
+ /* General Styling */
  body {
+     margin: 0;
+     font-family: Arial, sans-serif;
      display: flex;
-     flex-direction: row;
-     min-height: 100vh;
-     background-color: #f8f8f8;
+     height: 100vh;
+     /* Tinggi halaman 100% viewport */
+     overflow: hidden;
+     /* Tidak ada scroll pada body */
  }
 
- /* Container Utama */
- .container {
+ .main-container {
      display: flex;
      flex-direction: row;
      width: 100%;
+     height: 100%;
  }
 
- /* Profile Section */
- .profile {
+ /* Profile Container Styling */
+ .profile-container {
+     width: 30%;
+     /* Lebar 30% */
      background-color: #060522;
-     color: #ffffff;
-     width: 35%;
-     text-align: center;
-     padding: 40px 20px;
-     position: relative;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 20px;
+     box-sizing: border-box;
  }
 
- .profile-img {
-     width: 70%;
-     border-radius: 10px;
-     margin-bottom: 20px;
+ .profile-image {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     margin-bottom: 15px;
  }
 
  .social-icons {
-     position: sticky;
-     top: 0;
-     background-color: #0b0d2e;
-     padding: 10px 0;
- }
-
- .social-icons a img {
-     width: 30px;
-     margin: 5px;
-     /* filter: invert(1); */
-     transition: transform 0.2s ease-in-out;
- }
-
- .social-icons a img:hover {
-     transform: scale(1.4);
-     /* Efek zoom saat hover */
- }
-
- .profile h1 {
-     margin-bottom: 20px;
- }
-
-
- /* Portfolio Section */
- .portfolio {
-     background-color: #ffffff;
-     width: 65%;
-     padding: 40px;
- }
-
- .portfolio h2 {
-     margin-bottom: 20px;
-     font-size: 28px;
- }
-
- .portfolio-item {
      display: flex;
-     align-items: center;
-     margin-bottom: 20px;
-     padding: 10px;
-     border: 1px solid #ddd;
-     border-radius: 8px;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 15px;
  }
 
- .image-placeholder {
-     width: 100px;
-     height: 100px;
-     background-color: #e0e0e0;
-     border-radius: 8px;
-     margin-right: 20px;
+ .social-icons img {
+     width: 30px;
+     height: 30px;
+     border: 2px solid transparent;
+     /* Border default (tidak terlihat) */
+     border-radius: 50%;
+     /* Membuat border menjadi lingkaran */
+     transition: transform 0.2s ease;
  }
 
- .portfolio-content h3 {
-     font-size: 18px;
-     margin-bottom: 10px;
+ .social-icons img:hover {
+     border-color: #d56906;
+     /* Warna border saat di-hover */
+     background-color: #d56906;
+     /* Warna latar belakang saat di-hover */
+     transform: scale(1.2);
  }
 
- .portfolio-content p {
-     font-size: 14px;
-     margin-bottom: 10px;
-     color: #555;
+ /* Portfolio Container Styling */
+ .portfolio-container {
+     width: 70%;
+     /* Lebar 70% */
+     background-color: #f8f9fa;
+     display: flex;
+     flex-direction: column;
+     padding: 20px;
+     box-sizing: border-box;
+     overflow-y: auto;
+     /* Scroll internal */
  }
 
- .portfolio-content button {
-     padding: 6px 12px;
-     background-color: #060522;
-     color: white;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
- }
-
- .portfolio-content button:hover {
-     background-color: #222;
-     color: #d56906;
+ .portfolio-list {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
  }
 
 
- /* Pagination */
+
+ /* Responsive Styling */
+ @media (max-width: 768px) {
+     .main-container {
+         flex-direction: column;
+     }
+
+     .profile-container {
+         width: 100%;
+         height: 50%;
+         /* Setengah layar */
+     }
+
+     .portfolio-container {
+         width: 100%;
+         height: 50%;
+         /* Setengah layar */
+     }
+
+     .profile-image {
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         margin-bottom: 15px;
+     }
+
+     /* .social-icons img:hover {
+
+         transform: scale(1.2);
+     } */
+
+     /* .pagination button:hover {
+        
+         color: #d56906;
+     }
+
+     .portfolio-item button:hover {
+         color: #d56906;
+     } */
+ }
+
  .pagination {
      display: flex;
      justify-content: center;
      align-items: center;
      margin-top: 20px;
+     gap: 10px;
  }
 
  .pagination button {
-     padding: 8px 16px;
-     margin: 0 5px;
+     padding: 8px 12px;
+     border: none;
      background-color: #060522;
      color: white;
-     border: none;
-     border-radius: 4px;
      cursor: pointer;
+     border-radius: 5px;
+     transition: background 0.3s;
  }
 
  .pagination button:hover {
-     background-color: #222;
+     /* background-color: #333; */
      color: #d56906;
  }
 
  .pagination span {
-     font-size: 16px;
+     font-size: 18px;
      font-weight: bold;
-     margin: 0 10px;
  }
 
- /* Responsive Design */
- @media (max-width: 768px) {
-     body {
-         flex-direction: column;
-     }
-
-     .container {
-         flex-direction: column;
-     }
-
-     .profile {
-         width: 100%;
-         padding: 20px;
-     }
-
-     .social-icons {
-         position: sticky;
-         top: 0;
-         z-index: 1000;
-     }
-
-     .portfolio {
-         width: 100%;
-         padding: 20px;
-     }
-
-     .portfolio-item {
-         flex-direction: column;
-         text-align: center;
-     }
-
-     .image-placeholder {
-         margin-bottom: 10px;
-         margin-right: 0;
-     }
-
-
+ /* Portfolio Item Styling */
+ .portfolio-item {
+     display: flex;
+     flex-direction: column;
+     background-color: #ffffff;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     padding: 20px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px;
  }
 
+ .portfolio-item .image-placeholder {
+     height: 150px;
+     background-color: #f0f0f0;
+     border-radius: 8px;
+     margin-bottom: 15px;
+ }
 
+ .portfolio-item h3 {
+     margin: 0 0 10px;
+     font-size: 20px;
+ }
 
- /* Styling button scroll to top */
- .scroll-to-top {
-     position: fixed;
-     bottom: 20px;
-     right: 20px;
-     width: 50px;
-     height: 50px;
-     background-color: #0b0d2e;
-     /* Warna background */
+ .portfolio-item p {
+     margin: 0 0 15px;
+     font-size: 16px;
+     color: #666;
+ }
+
+ .portfolio-item button {
+     background-color: #060522;
      color: white;
+     padding: 8px 12px;
      border: none;
-     border-radius: 50%;
-     /* Membuat button berbentuk bulat */
-     font-size: 24px;
-     text-align: center;
+     border-radius: 5px;
      cursor: pointer;
-     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-     display: none;
-     /* Button tidak muncul secara default */
-     z-index: 1000;
-     transition: all 0.3s ease;
+     transition: background-color 0.3s;
  }
 
- /* Efek hover pada button */
- .scroll-to-top:hover {
-     background-color: #333;
-     /* Warna background saat di-hover */
- }
-
- /* Hanya tampil di mode smartphone (max-width: 768px) */
- @media (max-width: 768px) {
-     .scroll-to-top {
-         display: block;
-         /* Tampilkan button saat layar kecil */
-     }
+ .portfolio-item button:hover {
+     color: #d56906;
  }
