@@ -71,6 +71,5 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     }
 });
 
-//tes
 // Initial fetch and render
 fetchPortfolioData();

@@ -38,9 +38,6 @@
         
 </body>
 
-    <!-- <script src="public/script/index.js"></script> -->
     <script src="public/script/data_index.js"></script>
-    <!-- <script src="public/script/index_button_up.js"></script> -->
-    <!-- tes -->
  
 </html>
