@@ -57,25 +57,4 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     }
 });
 
-// Ambil elemen button
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Fungsi untuk mendeteksi scroll
-window.onscroll = function () {
-    // Jika user scroll lebih dari 100px, tampilkan button
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-};
-
-// Fungsi untuk scroll ke atas saat button diklik
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth" // Efek smooth scroll
-    });
-}
-// Initial render
-renderPortfolio();

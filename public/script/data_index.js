@@ -20,8 +20,9 @@ function fetchPortfolioData() {
 
 // Render portfolio items
 function renderPortfolio() {
-    const container = document.getElementById("portfolio-container");
+    const container = document.getElementById("portfolio-item");
     container.innerHTML = ""; // Bersihkan kontainer
+
 
     // Hitung indeks awal dan akhir
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -31,14 +32,12 @@ function renderPortfolio() {
     const currentItems = portfolioItems.slice(startIndex, endIndex);
     currentItems.forEach(item => {
         const card = `
-            <div class="portfolio-item">
-                <div class="portfolio-content">
+            <div class="portfolio-item">      
                     <h3>${item.title}</h3>  
                     <p>${item.desk}</p>     
                     <a href="${item.link}" target="_blank">
                         <button>View</button>
                     </a>
-                </div>
             </div>
         `;
         container.innerHTML += card;

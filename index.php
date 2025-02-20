@@ -9,37 +9,33 @@
 </head>
 
 <body>
-    <!-- Button Scroll to Top -->
-    <!-- <button id="scrollToTopBtn" class="scroll-to-top" onclick="scrollToTop()">
-        ↑
-    </button> -->
-    <div class="main-container">
-        <!-- Profile Container -->
-        <div class="profile-container">
-            <img src="uploads/profile-foto.jpg" alt="Profile" class="profile-image">
+     
+    <div class="sidebar">
+        <div class="profile">
+            <img src="uploads/i2.png" alt="Profile">
             <h2>Muhammad Hidayatullah</h2>
             <p>ayot427@gmail.com</p>
-            <div class="social-icons">
-                <a href="https://t.me/Yout_0" target="_blank"><img src="public/image/icons/telegram.png" alt="Telegram"></a>
-                <a href="https://github.com/Mhidate" target="_blank"><img src="public/image/icons/github.png" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/muhammad-hidayatullah-81a2a61bb/" target="_blank"><img src="public/image/icons/linkedin.png" alt="LinkedIn"></a>
-                <a href="https://www.instagram.com/luvyut" target="_blank"><img src="public/image/icons/ig.png" alt="Instagram"></a>   
-            </div>      
         </div>
+        <div class="social-icons">
+                    <a href="https://t.me/Yout_0" target="_blank"><img src="public/image/icons/telegram.png" alt="Telegram"></a>
+                    <a href="https://github.com/Mhidate" target="_blank"><img src="public/image/icons/github.png" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/muhammad-hidayatullah-81a2a61bb/" target="_blank"><img src="public/image/icons/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/luvyut" target="_blank"><img src="public/image/icons/ig.png" alt="Instagram"></a>
+        </div>
+    </div>
 
-        <!-- Portfolio Container -->
+    <div class="content">
+        <h1>Portfolio Projects</h1>
         <div class="portfolio-container">
-            <h1>Portfolio Projects</h1>
-            <div id="portfolio-container" class="portfolio-list"></div>
-            <div class="pagination">
+          <div id="portfolio-item"> </div>
+        </div>
+        <div class="pagination">
                 <button id="prevBtn">Previous</button>
                 <span id="pageNumber">1</span> / <span id="totalPages">1</span>
                 <button id="nextBtn">Next</button>
-            </div>
         </div>
-
     </div>
-
+        
 </body>
 
     <!-- <script src="public/script/index.js"></script> -->
